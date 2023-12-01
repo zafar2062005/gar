@@ -73,8 +73,6 @@ def result(score):
         text=f"You scored {(score/5)*100}% \n \n {correct}",
     )
     result.pack(pady=100)
-    pygame.mixer.music.load("win.mp3")
-    pygame.mixer.music.play(loops=0)
 
 score = 0
 correct = ""
@@ -111,16 +109,15 @@ def selected():
      rvariable.set(-1)
      pointer += 1 
      if ques < 5:
-        # print(random1)
-        # print([user_answer[-1] ,real_answers[index[ques-1]]])
+        print(random1)
+        print([user_answer[-1] ,real_answers[index[ques-1]]])
         print(ques)
         print(pointer)
-        if not pointer == 5:
-            if user_answer[-1] == real_answers[index[ques-1]]:
+        if user_answer[-1] == real_answers[index[ques-1]]:
                 random1 += 1
                 pygame.mixer.music.load("win.mp3")
                 pygame.mixer.music.play(loops=0)
-            else:  
+        else:  
                 pygame.mixer.music.load("lose.mp3")
                 pygame.mixer.music.play(loops=0)
 
